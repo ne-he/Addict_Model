@@ -147,3 +147,16 @@ def log_transform(df: pd.DataFrame) -> pd.DataFrame:
         if col in x.columns:
             x[col] = np.log1p(x[col].clip(lower=0))
     return x
+
+
+# ---------------------------------------------------------------------------
+# 2.6  scale_features
+# ---------------------------------------------------------------------------
+
+def scale_features(df: pd.DataFrame, scaler: StandardScaler) -> pd.DataFrame:
+    """Apply a pre-fitted StandardScaler to the DataFrame (notebook cell 106).
+
+    Returns a DataFrame with the same columns and index as the input.
+    """
+    scaled = scaler.transform(df)
+    return pd.DataFrame(scaled, columns=df.columns, index=df.index)

@@ -13,7 +13,7 @@
   - [x] 2.3 Implementasi `encode_categorical(df, ohe)` — OHE untuk `Gender` dan `Phone_Usage_Purpose`
   - [x] 2.4 Implementasi `engineer_features(df)` — buat 10 fitur turunan sesuai notebook
   - [x] 2.5 Implementasi `log_transform(df)` — `np.log1p` pada 7 kolom skewed
-  - [ ] 2.6 Implementasi `scale_features(df, scaler)` — terapkan StandardScaler
+  - [x] 2.6 Implementasi `scale_features(df, scaler)` — terapkan StandardScaler
   - [ ] 2.7 Implementasi `preprocess_pipeline(input_dict, ohe, scaler, num_medians, cat_modes, feature_order)` — gabungkan semua langkah
 
 - [ ] 3. Ekstrak Training Code dan Simpan Artifact (`train_and_save.py` + `src/model.py`)
