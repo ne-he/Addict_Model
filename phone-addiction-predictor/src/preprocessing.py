@@ -118,3 +118,32 @@ def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
     x["social_media_x_anxiety"] = x["Time_on_Social_Media"] * x["Anxiety_Level"]
 
     return x
+
+
+# ---------------------------------------------------------------------------
+# 2.5  log_transform
+# ---------------------------------------------------------------------------
+
+SKEWED_COLS = [
+    "Age",
+    "checks_per_hour",
+    "apps_per_hour",
+    "screen_before_bed_ratio",
+    "usage_to_sleep_ratio",
+    "social_to_solo_ratio",
+    "social_media_x_anxiety",
+]
+
+
+def log_transform(df: pd.DataFrame) -> pd.DataFrame:
+    """Apply np.log1p to skewed columns (notebook cell 102).
+
+    Columns transformed: Age, checks_per_hour, apps_per_hour,
+    screen_before_bed_ratio, usage_to_sleep_ratio, social_to_solo_ratio,
+    social_media_x_anxiety.
+    """
+    x = df.copy()
+    for col in SKEWED_COLS:
+        if col in x.columns:
+            x[col] = np.log1p(x[col].clip(lower=0))
+    return x
