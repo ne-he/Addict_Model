@@ -7,8 +7,8 @@
   - [x] 1.2 Buat file kosong: `app.py`, `src/__init__.py`, `src/preprocessing.py`, `src/model.py`, `train_and_save.py`
   - [x] 1.3 Buat file placeholder: `requirements.txt`, `README.md`, `.gitignore`
 
-- [ ] 2. Ekstrak Preprocessing Code (`src/preprocessing.py`)
-  - [ ] 2.1 Implementasi `clean_sleep_hours(df)` — strip kutip, konversi ke float
+- [-] 2. Ekstrak Preprocessing Code (`src/preprocessing.py`)
+  - [x] 2.1 Implementasi `clean_sleep_hours(df)` — strip kutip, konversi ke float
   - [ ] 2.2 Implementasi `handle_missing_values(df, num_medians, cat_modes)` — impute numerik dengan median, kategorikal dengan modus
   - [ ] 2.3 Implementasi `encode_categorical(df, ohe)` — OHE untuk `Gender` dan `Phone_Usage_Purpose`
   - [ ] 2.4 Implementasi `engineer_features(df)` — buat 10 fitur turunan sesuai notebook
