@@ -51,3 +51,21 @@ def load_artifacts():
     feature_order = bundle["feature_order"]
 
     return model, scaler, ohe, num_medians, cat_modes, feature_order
+
+
+# ---------------------------------------------------------------------------
+# 3.3  predict
+# ---------------------------------------------------------------------------
+
+def predict(model: CatBoostRegressor, processed_df) -> float:
+    """Run inference and return the predicted Addiction_Level.
+
+    Args:
+        model:        Loaded CatBoostRegressor.
+        processed_df: pd.DataFrame of shape (1, N) — output of preprocess_pipeline().
+
+    Returns:
+        Predicted Addiction_Level clipped to [1.0, 10.0].
+    """
+    raw = float(model.predict(processed_df)[0])
+    return max(1.0, min(10.0, raw))

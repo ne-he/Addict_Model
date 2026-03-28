@@ -16,7 +16,7 @@
   - [x] 2.6 Implementasi `scale_features(df, scaler)` — terapkan StandardScaler
   - [x] 2.7 Implementasi `preprocess_pipeline(input_dict, ohe, scaler, num_medians, cat_modes, feature_order)` — gabungkan semua langkah
 
-- [-] 3. Ekstrak Training Code dan Simpan Artifact (`train_and_save.py` + `src/model.py`)
+- [x] 3. Ekstrak Training Code dan Simpan Artifact (`train_and_save.py` + `src/model.py`)
   - [x] 3.1 Implementasi `train_and_save.py`:
     - Load `Phone_Addiction.csv`
     - Data cleaning (drop cols, fix Sleep_Hours, fix Gender, replace Unknown→NaN, cap Age>150, drop duplicates)
@@ -30,7 +30,7 @@
     - Simpan `models/catboost_model.cbm`, `models/scaler.pkl`, `models/encoders.pkl`
     - Print RMSE dan R² pada test set sebagai verifikasi
   - [x] 3.2 Implementasi `load_artifacts()` di `src/model.py` dengan `@st.cache_resource`
-  - [ ] 3.3 Implementasi `predict(model, processed_df)` di `src/model.py`
+  - [x] 3.3 Implementasi `predict(model, processed_df)` di `src/model.py`
 
 - [ ] 4. Buat Aplikasi Streamlit (`app.py`)
   - [ ] 4.1 Setup layout dasar: judul, deskripsi, import artifact via `load_artifacts()`
