@@ -51,3 +51,31 @@ def handle_missing_values(
         if col in df.columns:
             df[col] = df[col].fillna(val)
     return df
+
+
+# ---------------------------------------------------------------------------
+# 2.3  encode_categorical
+# ---------------------------------------------------------------------------
+
+CAT_COLS = ["Gender", "Phone_Usage_Purpose"]
+
+
+def encode_categorical(df: pd.DataFrame, ohe: OneHotEncoder) -> pd.DataFrame:
+    """Apply fitted OneHotEncoder to Gender and Phone_Usage_Purpose.
+
+    Notebook cell 94:
+        ohe = OneHotEncoder(drop=["Other", "Other"], sparse_output=False,
+                            handle_unknown="ignore")
+        ohe.fit(X_train[cat_cols])
+
+    The encoded columns replace the original categorical columns.
+    """
+    df = df.copy()
+    encoded = ohe.transform(df[CAT_COLS])
+    encoded_df = pd.DataFrame(
+        encoded,
+        columns=ohe.get_feature_names_out(CAT_COLS),
+        index=df.index,
+    )
+    df = df.drop(columns=CAT_COLS)
+    return pd.concat([df, encoded_df], axis=1)
