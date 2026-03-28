@@ -160,3 +160,57 @@ def scale_features(df: pd.DataFrame, scaler: StandardScaler) -> pd.DataFrame:
     """
     scaled = scaler.transform(df)
     return pd.DataFrame(scaled, columns=df.columns, index=df.index)
+
+
+# ---------------------------------------------------------------------------
+# 2.7  preprocess_pipeline  — main entry point for inference
+# ---------------------------------------------------------------------------
+
+def preprocess_pipeline(
+    input_dict: dict,
+    ohe: OneHotEncoder,
+    scaler: StandardScaler,
+    num_medians: dict,
+    cat_modes: dict,
+    feature_order: list,
+) -> pd.DataFrame:
+    """Transform a raw user-input dict into a scaled DataFrame ready for inference.
+
+    Steps (identical to notebook training pipeline):
+        1. Build single-row DataFrame from input_dict
+        2. clean_sleep_hours()
+        3. Replace "Unknown" in Phone_Usage_Purpose with NaN
+        4. handle_missing_values()
+        5. encode_categorical()
+        6. engineer_features()
+        7. log_transform()
+        8. Reorder columns to match training feature_order
+        9. scale_features()
+
+    Args:
+        input_dict:    Raw values from the Streamlit form (19 features).
+        ohe:           Fitted OneHotEncoder (loaded from encoders.pkl).
+        scaler:        Fitted StandardScaler (loaded from scaler.pkl).
+        num_medians:   {col: median} computed on X_train.
+        cat_modes:     {col: mode}   computed on X_train.
+        feature_order: Ordered list of column names after all transformations.
+
+    Returns:
+        pd.DataFrame of shape (1, len(feature_order)), scaled and ready for model.predict().
+    """
+    df = pd.DataFrame([input_dict])
+
+    df = clean_sleep_hours(df)
+
+    df["Phone_Usage_Purpose"] = df["Phone_Usage_Purpose"].replace("Unknown", np.nan)
+
+    df = handle_missing_values(df, num_medians, cat_modes)
+    df = encode_categorical(df, ohe)
+    df = engineer_features(df)
+    df = log_transform(df)
+
+    # Ensure column order matches training exactly
+    df = df[feature_order]
+
+    df = scale_features(df, scaler)
+    return df

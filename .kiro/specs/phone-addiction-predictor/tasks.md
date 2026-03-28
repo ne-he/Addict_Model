@@ -7,14 +7,14 @@
   - [x] 1.2 Buat file kosong: `app.py`, `src/__init__.py`, `src/preprocessing.py`, `src/model.py`, `train_and_save.py`
   - [x] 1.3 Buat file placeholder: `requirements.txt`, `README.md`, `.gitignore`
 
-- [-] 2. Ekstrak Preprocessing Code (`src/preprocessing.py`)
+- [x] 2. Ekstrak Preprocessing Code (`src/preprocessing.py`)
   - [x] 2.1 Implementasi `clean_sleep_hours(df)` — strip kutip, konversi ke float
   - [x] 2.2 Implementasi `handle_missing_values(df, num_medians, cat_modes)` — impute numerik dengan median, kategorikal dengan modus
   - [x] 2.3 Implementasi `encode_categorical(df, ohe)` — OHE untuk `Gender` dan `Phone_Usage_Purpose`
   - [x] 2.4 Implementasi `engineer_features(df)` — buat 10 fitur turunan sesuai notebook
   - [x] 2.5 Implementasi `log_transform(df)` — `np.log1p` pada 7 kolom skewed
   - [x] 2.6 Implementasi `scale_features(df, scaler)` — terapkan StandardScaler
-  - [ ] 2.7 Implementasi `preprocess_pipeline(input_dict, ohe, scaler, num_medians, cat_modes, feature_order)` — gabungkan semua langkah
+  - [x] 2.7 Implementasi `preprocess_pipeline(input_dict, ohe, scaler, num_medians, cat_modes, feature_order)` — gabungkan semua langkah
 
 - [ ] 3. Ekstrak Training Code dan Simpan Artifact (`train_and_save.py` + `src/model.py`)
   - [ ] 3.1 Implementasi `train_and_save.py`:
