@@ -34,7 +34,7 @@
 
 - [-] 4. Buat Aplikasi Streamlit (`app.py`)
   - [x] 4.1 Setup layout dasar: judul, deskripsi, import artifact via `load_artifacts()`
-  - [ ] 4.2 Implementasi form input 19 fitur dalam 3 seksi:
+  - [x] 4.2 Implementasi form input 19 fitur dalam 3 seksi:
     - Seksi "Informasi Dasar": Age, Gender, Daily_Usage_Hours, Sleep_Hours, Weekend_Usage_Hours
     - Seksi "Aktivitas Smartphone": Phone_Checks_Per_Day, Apps_Used_Daily, Screen_Time_Before_Bed, Time_on_Social_Media, Time_on_Gaming, Time_on_Education, Phone_Usage_Purpose
     - Seksi "Kesehatan & Sosial": Anxiety_Level, Depression_Level, Self_Esteem, Interllectual_Performance, Social_Interactions, Exercise_Hours, Family_Communication
