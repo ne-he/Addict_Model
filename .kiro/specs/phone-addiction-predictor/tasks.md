@@ -32,7 +32,7 @@
   - [x] 3.2 Implementasi `load_artifacts()` di `src/model.py` dengan `@st.cache_resource`
   - [x] 3.3 Implementasi `predict(model, processed_df)` di `src/model.py`
 
-- [-] 4. Buat Aplikasi Streamlit (`app.py`)
+- [x] 4. Buat Aplikasi Streamlit (`app.py`)
   - [x] 4.1 Setup layout dasar: judul, deskripsi, import artifact via `load_artifacts()`
   - [x] 4.2 Implementasi form input 19 fitur dalam 3 seksi:
     - Seksi "Informasi Dasar": Age, Gender, Daily_Usage_Hours, Sleep_Hours, Weekend_Usage_Hours
@@ -44,7 +44,7 @@
     - < 4.0 → `st.success` "Rendah – Penggunaan smartphone Anda tergolong sehat."
     - 4.0–6.9 → `st.warning` "Sedang – Perhatikan pola penggunaan smartphone Anda."
     - ≥ 7.0 → `st.error` "Tinggi – Disarankan untuk mengurangi penggunaan smartphone."
-  - [ ] 4.6 Tambahkan error handling dengan `try/except` dan `st.error()` untuk kegagalan preprocessing/inferensi
+  - [x] 4.6 Tambahkan error handling dengan `try/except` dan `st.error()` untuk kegagalan preprocessing/inferensi
 
 - [ ] 5. Setup Dependencies dan Dokumentasi
   - [ ] 5.1 Tulis `requirements.txt` dengan versi yang kompatibel:

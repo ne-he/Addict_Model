@@ -156,3 +156,12 @@ if submitted:
     st.caption(
         "ℹ️ Skala 1–10: < 4 = Rendah · 4–6.9 = Sedang · ≥ 7 = Tinggi"
     )
+
+
+# ── footer ────────────────────────────────────────────────────────────────────
+st.divider()
+st.caption(
+    "Model: CatBoost Regressor · "
+    "Dataset: Phone_Addiction.csv · "
+    "Pipeline: clean → impute → OHE → feature engineering → log transform → scale"
+)
