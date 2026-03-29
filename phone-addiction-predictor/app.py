@@ -135,3 +135,24 @@ if submitted:
     with col_bar:
         st.caption("Skala Kecanduan (1 = Rendah, 10 = Tinggi)")
         st.progress(int((prediction - 1) / 9 * 100))
+
+    # ── categorical interpretation ────────────────────────────────────────────
+    if prediction < 4.0:
+        st.success(
+            "🟢 **Rendah** — Penggunaan smartphone kamu tergolong sehat. "
+            "Pertahankan kebiasaan baikmu!"
+        )
+    elif prediction < 7.0:
+        st.warning(
+            "🟡 **Sedang** — Perhatikan pola penggunaan smartphone kamu. "
+            "Coba batasi screen time dan perbanyak aktivitas offline."
+        )
+    else:
+        st.error(
+            "🔴 **Tinggi** — Disarankan untuk mengurangi penggunaan smartphone. "
+            "Pertimbangkan untuk berkonsultasi dengan profesional jika diperlukan."
+        )
+
+    st.caption(
+        "ℹ️ Skala 1–10: < 4 = Rendah · 4–6.9 = Sedang · ≥ 7 = Tinggi"
+    )
