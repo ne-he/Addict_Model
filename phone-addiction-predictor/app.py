@@ -120,3 +120,18 @@ if submitted:
     except Exception as e:
         st.error(f"Terjadi error saat memproses input: {e}")
         st.stop()
+
+
+    # ── display result ────────────────────────────────────────────────────────
+    st.divider()
+    st.subheader("📊 Hasil Prediksi")
+
+    col_metric, col_bar = st.columns([1, 2])
+    with col_metric:
+        st.metric(
+            label="Addiction Level",
+            value=f"{prediction:.2f} / 10",
+        )
+    with col_bar:
+        st.caption("Skala Kecanduan (1 = Rendah, 10 = Tinggi)")
+        st.progress(int((prediction - 1) / 9 * 100))
