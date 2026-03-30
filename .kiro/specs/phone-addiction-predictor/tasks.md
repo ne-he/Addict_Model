@@ -73,7 +73,7 @@
 
 - [-] 6. Testing dan Verifikasi
   - [x] 6.1 Jalankan `train_and_save.py` dan verifikasi RMSE ≈ 0.362, R² ≈ 0.947 pada test set
-  - [ ] 6.2 Jalankan `streamlit run app.py` dan test dengan input default (nilai tengah dari range)
+  - [x] 6.2 Jalankan `streamlit run app.py` dan test dengan input default (nilai tengah dari range)
   - [ ] 6.3 Test edge cases:
     - `Daily_Usage_Hours = 0` (usage_zero_flag = 1, denom_usage = 1)
     - `Sleep_Hours` sangat kecil (eps mencegah division by zero)
