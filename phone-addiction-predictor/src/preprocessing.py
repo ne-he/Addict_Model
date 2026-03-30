@@ -203,6 +203,12 @@ def preprocess_pipeline(
 
     Returns:
         pd.DataFrame of shape (1, len(feature_order)), scaled and ready for model.predict().
+
+    Example:
+        >>> processed = preprocess_pipeline(input_dict, ohe, scaler,
+        ...                                 num_medians, cat_modes, feature_order)
+        >>> assert processed.shape == (1, len(feature_order))
+        >>> assert not processed.isnull().any().any()
     """
     df = pd.DataFrame([input_dict])
 
