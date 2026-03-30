@@ -71,7 +71,7 @@
     - Instruksi menjalankan app: `streamlit run app.py`
     - Penjelasan singkat fitur input dan output
 
-- [-] 6. Testing dan Verifikasi
+- [x] 6. Testing dan Verifikasi
   - [x] 6.1 Jalankan `train_and_save.py` dan verifikasi RMSE ≈ 0.362, R² ≈ 0.947 pada test set
   - [x] 6.2 Jalankan `streamlit run app.py` dan test dengan input default (nilai tengah dari range)
   - [x] 6.3 Test edge cases:
@@ -79,4 +79,4 @@
     - `Sleep_Hours` sangat kecil (eps mencegah division by zero)
     - Input dengan nilai minimum dan maksimum semua fitur
   - [x] 6.4 Verifikasi urutan kolom output preprocessor identik dengan `feature_order` dari artifact
-  - [ ] 6.5 Perbaiki error yang ditemukan pada langkah 6.1–6.4
+  - [x] 6.5 Perbaiki error yang ditemukan pada langkah 6.1–6.4
