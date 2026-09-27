@@ -39,7 +39,7 @@ print("Cleaning data...")
 drop_cols = ["Name", "Location", "Unnamed: 0", "ConstantCol", "Apps_Used_Weekly"]
 df = df.drop(columns=[c for c in drop_cols if c in df.columns])
 
-# fix Sleep_Hours — strip surrounding quotes (notebook cell 43)
+# fix Sleep_Hours: strip surrounding quotes (notebook cell 43)
 df["Sleep_Hours"] = df["Sleep_Hours"].astype(str).str.strip('"').astype(float)
 
 # normalise Gender (notebook cell 48)

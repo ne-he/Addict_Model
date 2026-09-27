@@ -1,6 +1,6 @@
 """
 src/preprocessing.py
-Preprocessing pipeline — identik dengan notebook AOL_Machine_Learning.ipynb
+Preprocessing pipeline: identik dengan notebook AOL_Machine_Learning.ipynb
 """
 
 import numpy as np
@@ -106,7 +106,7 @@ def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
     x["apps_per_hour"] = x["Apps_Used_Daily"] / denom_usage
     x["screen_before_bed_ratio"] = x["Screen_Time_Before_Bed"] / denom_usage
 
-    # sleep-based ratios — eps prevents inf when Sleep_Hours=0
+    # sleep-based ratios: eps prevents inf when Sleep_Hours=0
     x["usage_to_sleep_ratio"] = x["Daily_Usage_Hours"] / (x["Sleep_Hours"] + eps)
     x["late_screen_ratio"] = x["Screen_Time_Before_Bed"] / (x["Sleep_Hours"] + eps)
 
@@ -169,7 +169,7 @@ def scale_features(df: pd.DataFrame, scaler: StandardScaler) -> pd.DataFrame:
 
 
 # ---------------------------------------------------------------------------
-# 2.7  preprocess_pipeline  — main entry point for inference
+# 2.7  preprocess_pipeline: main entry point for inference
 # ---------------------------------------------------------------------------
 
 def preprocess_pipeline(

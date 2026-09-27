@@ -1,5 +1,5 @@
 """
-app.py — Phone Addiction Level Predictor
+app.py: Phone Addiction Level Predictor
 Streamlit web application for predicting smartphone addiction level.
 """
 
@@ -139,17 +139,17 @@ if submitted:
     # ── categorical interpretation ────────────────────────────────────────────
     if prediction < 4.0:
         st.success(
-            "🟢 **Rendah** — Penggunaan smartphone kamu tergolong sehat. "
+            "🟢 **Rendah**: Penggunaan smartphone kamu tergolong sehat. "
             "Pertahankan kebiasaan baikmu!"
         )
     elif prediction < 7.0:
         st.warning(
-            "🟡 **Sedang** — Perhatikan pola penggunaan smartphone kamu. "
+            "🟡 **Sedang**: Perhatikan pola penggunaan smartphone kamu. "
             "Coba batasi screen time dan perbanyak aktivitas offline."
         )
     else:
         st.error(
-            "🔴 **Tinggi** — Disarankan untuk mengurangi penggunaan smartphone. "
+            "🔴 **Tinggi**: Disarankan untuk mengurangi penggunaan smartphone. "
             "Pertimbangkan untuk berkonsultasi dengan profesional jika diperlukan."
         )
 

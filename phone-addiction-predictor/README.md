@@ -132,12 +132,12 @@ Buka browser di `http://localhost:8501`
 
 Pipeline di aplikasi **identik** dengan notebook pelatihan:
 
-1. **Clean** — strip kutip dari `Sleep_Hours`, normalisasi `Gender`
-2. **Impute** — median untuk numerik, modus untuk kategorikal (dari training set)
-3. **OHE** — `Gender` & `Phone_Usage_Purpose` dengan `drop=["Other","Other"]`
-4. **Feature Engineering** — 10 fitur turunan (ratio, interaksi, flag)
-5. **Log Transform** — `np.log1p` pada 7 kolom skewed
-6. **Scale** — `StandardScaler` yang di-fit pada training set
+1. **Clean**: strip kutip dari `Sleep_Hours`, normalisasi `Gender`
+2. **Impute**: median untuk numerik, modus untuk kategorikal (dari training set)
+3. **OHE**: `Gender` & `Phone_Usage_Purpose` dengan `drop=["Other","Other"]`
+4. **Feature Engineering**: 10 fitur turunan (ratio, interaksi, flag)
+5. **Log Transform**: `np.log1p` pada 7 kolom skewed
+6. **Scale**: `StandardScaler` yang di-fit pada training set
 
 ---
 

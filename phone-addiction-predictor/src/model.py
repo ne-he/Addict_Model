@@ -26,7 +26,7 @@ def load_artifacts():
         ohe          : Fitted OneHotEncoder
         num_medians  : dict {col: median} for numerical imputation
         cat_modes    : dict {col: mode}   for categorical imputation
-        feature_order: list[str] — column order expected by the model
+        feature_order: list[str]: column order expected by the model
     """
     model_path    = os.path.join(_MODELS_DIR, "catboost_model.cbm")
     scaler_path   = os.path.join(_MODELS_DIR, "scaler.pkl")
@@ -62,7 +62,7 @@ def predict(model: CatBoostRegressor, processed_df) -> float:
 
     Args:
         model:        Loaded CatBoostRegressor.
-        processed_df: pd.DataFrame of shape (1, N) — output of preprocess_pipeline().
+        processed_df: pd.DataFrame of shape (1, N), the output of preprocess_pipeline().
 
     Returns:
         Predicted Addiction_Level clipped to [1.0, 10.0].
